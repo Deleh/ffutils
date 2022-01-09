@@ -1,9 +1,10 @@
 * ffutils
 
-  This is a collection of ffmpeg wrapper scripts:
+  This is a collection of ffmpeg wrapper scripts.
+  Currently the following scripts are available:
 
-  | [[#ffconv][=ffconv=]] | Convert multiple media files from one format to another |
-  | [[#ffcut][=ffcut=]]  | Extract a part of a media file                          |
+  | [[#ffconv][ffconv]] | Convert multiple media files from one format to another |
+  | [[#ffcut][ffcut]]  | Extract a part of a media file                          |
 
 ** Dependencies
 
@@ -36,7 +37,7 @@
     #+end_example
 
     *Warning*: The default behavior removes the original files.
-    Use the =--keep= or =--move= flags to keep the original files or move them to another directory (see *Usage* below).
+    Use the =--keep= or =--move= flags to keep the original files or move them to another directory.
 
 **** Usage
 
