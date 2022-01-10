@@ -17,7 +17,7 @@
    This repo is also a [[https://nixos.wiki/wiki/Flakes][Nix Flake]].
    You can directly start a script with the following command if you have at least version 2.4 of [[https://nixos.org/][Nix]] installed:
 
-   : nix run github:Deleh/ffutils#<script_name> -- --help
+   : $ nix run github:Deleh/ffutils#<script_name> -- --help
 
 ** Scripts
    
