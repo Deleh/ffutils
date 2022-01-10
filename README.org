@@ -86,18 +86,19 @@
        Usage: ffcut [OPTIONS] FILE
 
        Extract a part of a file.
-       The cutted file will be saved as cutted_<filename>.
 
        POSITIONAL ARGUMENTS
          FILE  File which will be cutted
 
        OPTIONS
          -f, --from TIMESTAMP/SECONDS  Extract from TIMESTAMP/SECONDS (default: 0)
+         -o, --out FILE                Save extracted part to FILE (default: cutted_<fi
+                                       lename>)
          -t, --to TIMESTAMP/DURATION   Extract to TIMESTAMP/DURATION (default: end)
 
        EXAMPLES
-         ffcut -t 5 video.mp4                     Extract the first five seconds of 'vi
-                                                  deo.mp4'
+         ffcut -t 5 video.mp4 -o cut.webm         Extract the first five seconds of 'vi
+                                                  deo.mp4' to 'cut.webm'
          ffcut -f 00:10:30 -t 00:14:15 video.mp4  Extract the part from 00:10:30 to 00:
                                                   14:15 from 'video.mp4'
      #+end_example
