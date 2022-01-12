@@ -19,6 +19,7 @@
               '';
               installPhase = ''
                 install -m 755 -D bin/ffconv $out/bin/ffconv
+                install -m 644 -D lib/sf $out/lib/sf
               '';
             };
             ffcut = pkgs.stdenv.mkDerivation {
@@ -30,6 +31,7 @@
               '';
               installPhase = ''
                 install -m 755 -D bin/ffcut $out/bin/ffcut
+                install -m 644 -D lib/sf $out/lib/sf
               '';
             };
           };
