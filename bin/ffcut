@@ -20,11 +20,11 @@ source "$(dirname $0)/../lib/sf"
 echo "Cutting file ${sftbf}$(basename "$FILE")${sftrs}"
 
 # Set additional ffmpeg arguments
-ffmpeg_args=()
-[ "$to" != "end" ] && ffmpeg_args+=("-t" "$to")
-[ "${FILE##*.}" == "${out##*.}" ] && ffmpeg_args+=("-c" "copy")
+args=()
+[ "$to" != "end" ] && args+=("-to" "$to")
+[ "${FILE##*.}" == "${out##*.}" ] && args+=("-c" "copy")
 
 # Execute ffmpeg
-ffmpeg -hide_banner -loglevel error -ss "$from" -i "$FILE" -ss "$from" "${ffmpeg_args[@]}" "$out"
+ffmpeg -hide_banner -loglevel error -ss "$from" -i "$FILE" "${args[@]}" "$out"
 
 [ "$?" == "0" ] && echo "The extracted part was saved to ${sftbf}$out${sftrs}"
