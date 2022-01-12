@@ -25,6 +25,6 @@ args=()
 [ "${FILE##*.}" == "${out##*.}" ] && args+=("-c" "copy")
 
 # Execute ffmpeg
-ffmpeg -hide_banner -loglevel error -ss "$from" -i "$FILE" "${args[@]}" "$out"
+ffmpeg -hide_banner -loglevel error -i "$FILE" -ss "$from" "${args[@]}" "$out"
 
 [ "$?" == "0" ] && echo "The extracted part was saved to ${sftbf}$out${sftrs}"
