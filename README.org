@@ -52,13 +52,12 @@
          TO_FORMAT    To format
 
        OPTIONS
-         -h, --help                 Show this help message
          -d, --directory DIRECTORY  Convert files in DIRECTORY (default: current work
                                     directory)
          -k, --keep                 Keep original files
          -l, --list                 List files which match the FROM_FORMAT
          -m, --move DIRECTORY       Move old files to DIRECTORY (omits --keep)
-                                    (default: )
+         -h, --help                 Show this help message and exit
 
        EXAMPLES
          ffconv mp3 opus               Convert all mp3 files to opus
@@ -92,11 +91,11 @@
          FILE  File which will be cutted
 
        OPTIONS
-         -h, --help                    Show this help message
          -f, --from TIMESTAMP/SECONDS  Extract from TIMESTAMP/SECONDS (default: 0)
          -o, --out FILE                Save extracted part to FILE (default:
                                        cutted_<filename>)
          -t, --to TIMESTAMP/DURATION   Extract to TIMESTAMP/DURATION (default: end)
+         -h, --help                    Show this help message and exit
 
        EXAMPLES
          ffcut -t 5 video.mp4 -o cut.webm         Extract the first five seconds of
