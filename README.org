@@ -6,6 +6,8 @@
   | [[#ffconv][ffconv]] | Convert multiple media files from one format to another |
   | [[#ffcut][ffcut]]  | Extract a part of a media file                          |
 
+  All are created with the [[https://github.com/Deleh/sf][sf]] script framework.
+
 ** Dependencies
 
    - [[https://ffmpeg.org/][FFmpeg]]
