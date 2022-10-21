@@ -8,16 +8,15 @@ sfargs+=("out;o;FILE;cutted_<filename>;Save extracted part to FILE")
 sfargs+=("to;t;TIMESTAMP/DURATION;end;Extract to TIMESTAMP/DURATION")
 sfexamples+=("ffcut -t 5 video.mp4 -o cut.webm;Extract the first five seconds of 'video.mp4' to 'cut.webm'")
 sfexamples+=("ffcut -f 00:10:30 -t 00:14:15 video.mp4;Extract the part from 00:10:30 to 00:14:15 from 'video.mp4'")
+sfdeps=("ffmpeg")
 
 source "$(dirname $0)/../lib/sf"
 
 # Handle missing parameters
-[ "$from" == 0 ] && [ "$to" == "end" ] && sferr "Set at least '--from' or '--to'"
+[ "$from" == 0 ] && [ "$to" == "end" ] && sferr "Set at least ${sftbf}--from${sftrs} or ${sftbf}--to${sftrs}"
 
 # Set default value for output file
 [ "$out" == "cutted_<filename>" ] && out="$(dirname "$FILE")/cutted_$(basename "$FILE")"
-
-echo "Cutting file ${sftbf}$(basename "$FILE")${sftrs}"
 
 # Set additional ffmpeg arguments
 args=()
@@ -25,6 +24,7 @@ args=()
 [ "${FILE##*.}" == "${out##*.}" ] && args+=("-c" "copy")
 
 # Execute ffmpeg
+echo "Cutting file ${sftbf}$(basename "$FILE")${sftrs}"
 ffmpeg -hide_banner -loglevel error -i "$FILE" -ss "$from" "${args[@]}" "$out"
 
 [ "$?" == "0" ] && echo "The extracted part was saved to ${sftbf}$out${sftrs}"

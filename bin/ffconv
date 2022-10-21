@@ -11,6 +11,7 @@ sfargs+=("move;m;DIRECTORY;;Move old files to DIRECTORY (omits --keep)")
 sfexamples+=("ffconv mp3 opus;Convert all mp3 files to opus")
 sfexamples+=("ffconv -m trash mp4 mkv;Convert all mp4 to mkv and move the original ones to './trash'")
 sfexamples+=("ffconv -d ~/music -l wma mp3;List all wma files from '~/music' and ask for converting them to mp3")
+sfdeps=("ffmpeg")
 
 source "$(dirname $0)/../lib/sf"
 
